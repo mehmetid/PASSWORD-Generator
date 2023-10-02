@@ -1,6 +1,6 @@
 # PASSWORD-Generator
 
-## Authors
+# Authors
 
 Luke Wright, Dijone Mehmeti, Jake Schouten
 echo "# PASSWORD-Generator" >> README.md
