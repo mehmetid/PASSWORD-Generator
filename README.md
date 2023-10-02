@@ -1,4 +1,6 @@
 # PASSWORD-Generator
+##Authors
+Luke Wright, Dijone Mehmeti, Jake Schouten
 echo "# PASSWORD-Generator" >> README.md
 git init
 git add README.md
