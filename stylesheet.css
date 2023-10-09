@@ -1,0 +1,18 @@
+/* create the grid container that will allow us to position our elements */
+#container {
+    margin-top: 0px;
+    display: grid;
+}
+
+/* remove the border around the elements */
+body {
+    margin: 0px;
+}
+
+/* center the label in its column and make it stand out */
+#banner {
+    
+    text-align: center;
+    background-color: #4a4948;
+    color: white;
+}
