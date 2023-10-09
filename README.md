@@ -1,8 +1,13 @@
 # PASSWORD-Generator
 
 ## Authors
-
 Luke Wright, Dijone Mehmeti, Jake Schouten
+## Purpose
+
+## Config/org of the folder
+
+## Explaining the file
+
 echo "# PASSWORD-Generator" >> README.md
 git init
 git add README.md
