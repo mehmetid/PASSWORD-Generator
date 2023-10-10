@@ -2,17 +2,14 @@
 <html lang="en">
 
     <head>
-        <!-- connect javascript here -->
-        <script src="function.js"></script>
-	    
-	<meta charset="utf-8">
+	    <meta charset="utf-8">
+
         <!-- we can use css to make the webpage look good in the future -->
         <link href="stylesheet.css" type="text/css" rel="stylesheet">
         <title>Password Generator</title>
     </head>
 
     <body>
-	<!-- the container for ourr  -->
         <div id="container">
 
             <!-- a banner at the top of the page -->
@@ -24,15 +21,18 @@
             <p>
                 <!-- an input to display the password in -->
                 <div id = "passworddisplay">
-                    <label for="password">Your New Password:</label>
-                    <input id="password">
+                    <label for="passwordinput">Your New Password:</label>
+                    <input id="passwordinput">
                 </div>
             </p>
 
             <div id = "passwordbutton">
                 <!-- a button to generate the password -->
-                <button id="generatePassword">Generate Password</button>
+                <button id = "generatePasswordButton">Generate Password</button>
             </div>
         </div>
+
+        <!-- connect javascript here -->
+        <script src="function.js"></script>
     </body>
 </html>
