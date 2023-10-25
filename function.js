@@ -5,6 +5,9 @@ const numOfWords = 2;
 
 // run displayPassword when generatePasswordButton is clicked
 document.getElementById("generatePasswordButton").addEventListener("click", displayPassword);
+function getRandomInt(int) {
+    return Math.floor(Math.random() * 10);
+  }
 
 function generatePassword(wordBank, numWords) {
   if (!Array.isArray(wordBank) || wordBank.length === 0) {
@@ -34,6 +37,7 @@ function generatePassword(wordBank, numWords) {
 function displayPassword () {
   // set a password using generatePassword
   let newPass = generatePassword(wordBank, numOfWords)
+  
   // set the value within passwordinput equal to the new password
   document.getElementById("passwordinput").value = newPass;
 }
