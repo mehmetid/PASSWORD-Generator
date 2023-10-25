@@ -6,6 +6,15 @@ const numOfWords = 2;
 // run displayPassword when generatePasswordButton is clicked
 document.getElementById("generatePasswordButton").addEventListener("click", displayPassword);
 
+function getRandomInt(int) {
+  let word = "";
+  for (let i = 0; i < int; i ++){
+    var x = Math.floor(Math.random() * 10);
+     word += x;
+  }
+   return(word);
+  }
+
 function generatePassword(wordBank, numWords) {
   if (!Array.isArray(wordBank) || wordBank.length === 0) {
     throw new Error('Word bank must be a filled array.');
