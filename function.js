@@ -45,7 +45,9 @@ function displayPassword () {
   let newPass = generatePassword(wordBank, numOfWords)
 
   //let checkbox = document.getElementById("checkbox_id"); (creates an object for the checkbox from the html)
-  //let checkbox.checked; (equals true if checked or false if not checked) 
+  //let checkbox.checked; (equals true if checked or false if not checked)
+
+  //document.getElementById('textbox_id').value; (returns the number typed into an input box)
   
   // set the value within passwordinput equal to the new password
   document.getElementById("passwordinput").value = newPass;
