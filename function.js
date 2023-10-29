@@ -31,9 +31,33 @@ function generatePassword(wordBank, numWords) {
   return password;
 }
 
+function addSpecialCharacters (password, numCharacters) {
+  // bank of special characters
+  const specicalChars = ["!", "@", "#", "$", "%", "^", "&", "*", "/", "?", "~"];
+
+  //add a number of special characters to the password equal to numCharacters
+  for (let i = 0; i < numCharacters; i++)
+  {
+    let randIndex = Math.floor(Math.random() * specicalChars.length);
+    let randChar = specicalChars[randIndex];
+
+    password += randChar;
+  }
+
+  return password;
+}
+
 function displayPassword () {
   // set a password using generatePassword
   let newPass = generatePassword(wordBank, numOfWords)
+  
+  console.log(newPass);
+
+  // add two special characters to the password
+  newPass = addSpecialCharacters(newPass, 2);
+
+  console.log(newPass);
+
   // set the value within passwordinput equal to the new password
   document.getElementById("passwordinput").value = newPass;
 }
