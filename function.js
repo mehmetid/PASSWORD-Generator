@@ -54,7 +54,7 @@ function displayPassword () {
   console.log(newPass);
 
   // add two special characters to the password
-  newPass = addSpecialCharacters(newPass, 2);
+  newPass = addSpecialCharacters(newPass, document.getElementById("specialCharsInput").value);
 
   console.log(newPass);
 
