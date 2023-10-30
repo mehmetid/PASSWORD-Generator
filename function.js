@@ -15,6 +15,13 @@ function getRandomInt(int) {
    return(word);
   }
 
+function capsUpper(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+ 
+var capsPass = capsUpper(password);
+console.log(capsPass);
+
 function generatePassword(wordBank, numWords) {
   if (!Array.isArray(wordBank) || wordBank.length === 0) {
     throw new Error('Word bank must be a filled array.');
