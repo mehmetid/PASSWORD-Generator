@@ -22,23 +22,6 @@ function capsUpper(string) {
 var capsPass = capsUpper(password);
 console.log(capsPass);
 
-function caseSensFunc(wordBank, length) {
-    let password = "";
-  
-    for (let i = 0; i < length; i++) {
-      const randIndex = Math.floor(Math.random() * wordBank.length);
-      const randomWord = wordBank[randIndex];
-      const useUppercase = Math.random() < 0.4; // 40% chance of using uppercase on a random run
-  
-      if (useUppercase) {
-        password += randomWord.toUpperCase();
-      } else {
-        password += randomWord;
-      }
-    }
-  
-    return password;
-  }
 
 function generatePassword(wordBank, numWords) {
   if (!Array.isArray(wordBank) || wordBank.length === 0) {
@@ -91,6 +74,10 @@ function displayPassword () {
   newPass = addSpecialCharacters(newPass, document.getElementById("specialCharsInput").value);
 
   //document.getElementById('textbox_id').value; (returns the number typed into an input box)
+  
+  
+  // Capitalize the first letter of the new password
+   newPassword = capsUpper(newPassword);
   
   // set the value within passwordinput equal to the new password
   document.getElementById("passwordinput").value = newPass;
