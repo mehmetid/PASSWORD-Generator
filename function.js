@@ -6,6 +6,18 @@ const numOfWords = 2;
 // run displayPassword when generatePasswordButton is clicked
 document.getElementById("generatePasswordButton").addEventListener("click", displayPassword);
 
+function capsUpper(password) {
+    let ranIndex = Math.floor(Math.random() * wordBank.length);
+    let ranWord = wordBank[ranIndex];
+
+    // Capitalize the first letter of the word
+    ranWord = ranWord.charAt(0).toUpperCase() + ranWord.slice(1);
+
+    password += ranWord;
+  return password;
+}
+
+
 function generatePassword(wordBank, numWords) {
   if (!Array.isArray(wordBank) || wordBank.length === 0) {
     throw new Error('Word bank must be a filled array.');
@@ -47,17 +59,33 @@ function addSpecialCharacters (password, numCharacters) {
   return password;
 }
 
+function getRandomInt(password, int) {
+  for (let i = 0; i < int; i ++){
+    var x = Math.floor(Math.random() * 10);
+     password += x;
+  }
+   return password;
+  }
+
 function displayPassword () {
   // set a password using generatePassword
   let newPass = generatePassword(wordBank, numOfWords)
-  
-  console.log(newPass);
 
-  // add two special characters to the password
+  //let checkbox = document.getElementById("checkbox_id"); (creates an object for the checkbox from the html)
+  //let checkbox.checked; (equals true if checked or false if not checked)
+  
   newPass = addSpecialCharacters(newPass, document.getElementById("specialCharsInput").value);
 
-  console.log(newPass);
-
+  //document.getElementById('textbox_id').value; (returns the number typed into an input box)
+  newPass = getRandomInt(newPass, document.getElementById("numnumbers").value);
+  
+  // Capitalize the first letter of the new password
+  //newPassword = capsUpper(newPassword);
+  if (document.getElementById("capitalLetter").checked)
+  {
+    newPass = capsUpper(newPass);
+  }
+  
   // set the value within passwordinput equal to the new password
   document.getElementById("passwordinput").value = newPass;
 }
