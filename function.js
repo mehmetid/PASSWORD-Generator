@@ -6,12 +6,18 @@ const numOfWords = 2;
 // run displayPassword when generatePasswordButton is clicked
 document.getElementById("generatePasswordButton").addEventListener("click", displayPassword);
 
-function capsUpper(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+function capsUpper(password, string) {
+  for (let i = 0; i < string; i++) {
+    const ranIndex = Math.floor(Math.random() * string.length);
+    const ranWord = string[ranIndex];
+
+    // Capitalize the first letter of the word
+    ranWord = ranWord.charAt(0).toUpperCase() + ranWord.slice(1);
+
+    password += ranWord;
+  }
+  return password;
 }
- 
-var capsPass = capsUpper(password);
-console.log(capsPass);
 
 
 function generatePassword(wordBank, numWords) {
@@ -77,6 +83,7 @@ function displayPassword () {
   
   // Capitalize the first letter of the new password
   //newPassword = capsUpper(newPassword);
+  newPass = capsUpper(newPass, document.getElementById("uppercaseSelection").value);
   
   // set the value within passwordinput equal to the new password
   document.getElementById("passwordinput").value = newPass;
