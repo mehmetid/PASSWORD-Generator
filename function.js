@@ -86,11 +86,11 @@ function displayPassword () {
 
   //let checkbox = document.getElementById("checkbox_id"); (creates an object for the checkbox from the html)
   //let checkbox.checked; (equals true if checked or false if not checked)
-  
-  newPass = addSpecialCharacters(newPass, document.getElementById("specialCharsInput").value);
-
+    
   //document.getElementById('textbox_id').value; (returns the number typed into an input box)
   newPass = getRandomInt(newPass, document.getElementById("numnumbers").value);
+  
+  newPass = addSpecialCharacters(newPass, document.getElementById("specialCharsInput").value);
   
   // set the value within passwordinput equal to the new password
   document.getElementById("passwordinput").value = newPass;
