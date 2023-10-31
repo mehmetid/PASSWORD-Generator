@@ -6,15 +6,6 @@ const numOfWords = 2;
 // run displayPassword when generatePasswordButton is clicked
 document.getElementById("generatePasswordButton").addEventListener("click", displayPassword);
 
-function getRandomInt(int) {
-  let word = "";
-  for (let i = 0; i < int; i ++){
-    var x = Math.floor(Math.random() * 10);
-     word += x;
-  }
-   return(word);
-  }
-
 function capsUpper(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -64,6 +55,14 @@ function addSpecialCharacters (password, numCharacters) {
   return password;
 }
 
+function getRandomInt(password, int) {
+  for (let i = 0; i < int; i ++){
+    var x = Math.floor(Math.random() * 10);
+     password += x;
+  }
+   return password;
+  }
+
 function displayPassword () {
   // set a password using generatePassword
   let newPass = generatePassword(wordBank, numOfWords)
@@ -74,10 +73,10 @@ function displayPassword () {
   newPass = addSpecialCharacters(newPass, document.getElementById("specialCharsInput").value);
 
   //document.getElementById('textbox_id').value; (returns the number typed into an input box)
-  
+  newPass = getRandomInt(newPass, document.getElementById("numnumbers").value);
   
   // Capitalize the first letter of the new password
-   newPassword = capsUpper(newPassword);
+  //newPassword = capsUpper(newPassword);
   
   // set the value within passwordinput equal to the new password
   document.getElementById("passwordinput").value = newPass;
