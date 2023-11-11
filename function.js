@@ -6,6 +6,7 @@ const numOfWords = 2;
 
 // run displayPassword when generatePasswordButton is clicked
 document.getElementById("generatePasswordButton").addEventListener("click", displayPassword);
+document.getElementById("copyButton").addEventListener("click", copyPassword);
 
 function capsUpper(password) {
     let ranIndex = Math.floor(Math.random() * wordBank.length);
@@ -71,6 +72,20 @@ function getRandomInt(password, int) {
    return password;
   }
 
+  function copyPassword() {
+
+    var copyText = document.getElementById("passwordinput").value;
+
+    navigator.clipboard.writeText(copyText)
+      .then(() => {
+        alert("Copied the text: " + copyText);
+      })
+      .catch(err => {
+        console.error('Failed to copy: ', err);
+        alert("Failed to copy text to clipboard.");
+      });
+  }
+
 function displayPassword () {
   
   // set a password using generatePassword
@@ -82,7 +97,7 @@ function displayPassword () {
   //add special characters equal to the number in specialCharsInput to the end
   newPass = addSpecialCharacters(newPass, document.getElementById("specialCharsInput").value);
   
+  //newPass = copyButton(newPass, document.getElementById("copytext").value);
   // set the value within passwordinput equal to the new password
   document.getElementById("passwordinput").value = newPass;
 }
-
