@@ -20,20 +20,26 @@
             
             <p>
 		<!-- an input to take the number of special characters the user wants -->
+		<div id = "capitalLetterCheckBox">
+		    <label for="capitalLetter">Start with Capital Letter?</label>
+            	    <input type="checkbox" id="capitalLetter">
+		</div>
 
-            <input type="checkbox" id="capitalLetter">
-            <label for="capitalLetter">do you want a capital letter?</label>
+		<div id = "numberofnumbers">
+                    <label for="numnumbers">Number of Numbers:</label>
+                    <input id="numnumbers">
+                </div>
                 
                 <div id = "numSpecialChars">
                     <label for="specialCharsInput">Number of Special Characters:</label>
                     <input id="specialCharsInput">
                 </div>
 
-                <div id = "numberofnumbers">
-                    <label for="numnumbers">Number of numbers:</label>
-                    <input id="numnumbers">
+                <!-- an input for characters to put at the start of the password -->
+                <div id = "startingCharacters">
+                    <label for="startingCharactersInput">Start my Password with:</label>
+                    <input id="startingCharactersInput">
                 </div>
-
 		
                 <!-- an input to display the password in -->
                 <div id = "passworddisplay">
@@ -48,6 +54,12 @@
                 <button id = "generatePasswordButton">Generate Password</button>
             </div>
         </div>
+
+        <!-- connect javascript here -->
+        <script src="function.js"></script>
+    </body>
+</html>
+
 
         <!-- connect javascript here -->
         <script src="function.js"></script>
