@@ -26,7 +26,7 @@ function generatePassword(wordBank, numWords) {
     throw new Error('Number of words must be greater than 0.');
   }
 
-  let password = '';
+  let password = document.getElementById("startingCharactersInput").value;
 
   for (let i = 0; i < numWords; i++) {
     let randIndex = Math.floor(Math.random() * wordBank.length);
