@@ -25,7 +25,7 @@ function generatePassword(wordBank, numWords) {
     throw new Error('Number of words must be greater than 0.');
   }
 
-  let password = '';
+  let password = document.getElementById("startingCharactersInput").value;
 
   for (let i = 0; i < numWords; i++) {
     let randIndex = Math.floor(Math.random() * wordBank.length);
@@ -72,27 +72,16 @@ function getRandomInt(password, int) {
   }
 
 function displayPassword () {
-
-  let newPass;
-  // Capitalize the first letter of the new password
-  //newPassword = capsUpper(newPassword);
-  //if (document.getElementById("capitalLetter").checked)
-  //{
-  //  newPass = capsUpper(newPass);
-  //}
-
+  
   // set a password using generatePassword
-  newPass = generatePassword(wordBank, numOfWords)
-
-  //let checkbox = document.getElementById("checkbox_id"); (creates an object for the checkbox from the html)
-  //let checkbox.checked; (equals true if checked or false if not checked)
+  let newPass = generatePassword(wordBank, numOfWords)
     
   //document.getElementById('textbox_id').value; (returns the number typed into an input box)
   newPass = getRandomInt(newPass, document.getElementById("numnumbers").value);
   
+  //add special characters equal to the number in specialCharsInput to the end
   newPass = addSpecialCharacters(newPass, document.getElementById("specialCharsInput").value);
   
   // set the value within passwordinput equal to the new password
   document.getElementById("passwordinput").value = newPass;
 }
-
