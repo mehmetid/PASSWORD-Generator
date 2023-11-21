@@ -86,6 +86,58 @@ function getRandomInt(password, int) {
       });
   }
 
+
+function setPasswordlength(password, wordBank, length, numbers, specials, starter){
+  var starterLength = starter.length;
+  var x = +numbers + +specials + +starterLength;
+  
+  if (length == "" ){
+    return password;
+  }
+  else if (length < x){
+    return "";
+  }
+//----------------------------------------------------------------------------------
+  var leftover = +length - x;
+  if (leftover == 0 ){
+    if (document.getElementById("capitalLetter").checked)
+    {
+        // Capitalize the first letter of the word
+        starter = starter.charAt(0).toUpperCase() + starter.slice(1);
+    }
+
+    return starter;
+  }
+
+  else if(leftover <= 2){
+    for (let i = leftover; i > 0; i--)
+    {
+    let randIndex = Math.floor(Math.random() * letterBank.length);
+    let randChar = letterBank[randIndex];
+
+    starter += randChar;
+    if (document.getElementById("capitalLetter").checked)
+    {
+        // Capitalize the first letter of the word
+        starter = starter.charAt(0).toUpperCase() + starter.slice(1);
+    }
+
+    }
+    return starter;
+  }
+  else{
+    const Astring = wordBank.find(str => str.length === leftover);
+    starter += Astring;
+    if (document.getElementById("capitalLetter").checked)
+    {
+        // Capitalize the first letter of the word
+        starter = starter.charAt(0).toUpperCase() + starter.slice(1);
+    }
+    return starter;
+  }
+  return "";
+}
+
 function displayPassword () {
   
   // set a password using generatePassword
