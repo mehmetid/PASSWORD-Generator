@@ -142,7 +142,7 @@ function displayPassword () {
   
   // set a password using generatePassword
   let newPass = generatePassword(wordBank, numOfWords)
-    
+   newPass = setPasswordlength(newPass, wordBank, document.getElementById("passwordLength").value, document.getElementById("numnumbers").value,  document.getElementById("specialCharsInput").value, document.getElementById("startingCharactersInput").value);  
   //document.getElementById('textbox_id').value; (returns the number typed into an input box)
   newPass = getRandomInt(newPass, document.getElementById("numnumbers").value);
   
