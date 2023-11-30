@@ -3,9 +3,6 @@
     display: grid;
 }
 
-
-
-
 /* remove the border around the elements */
 body {
     background: linear-gradient(-45deg, #ca7961, #f70662, #4d8ba1, #23d5ab);
@@ -14,8 +11,6 @@ body {
     animation: gradient 15s ease infinite;
     height: 100vh;
 }
-
-
 
 
 @keyframes gradient {
@@ -31,14 +26,10 @@ body {
 }
 
 
-
-
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
 }
-
-
 
 
 #container {
@@ -52,7 +43,7 @@ body {
    ----------------------------- */
    .nine h1 {
     text-align:center; font-size:50px; text-transform:uppercase; color:#222; letter-spacing:1px;
-    font-family:"Playfair Display", serif; font-weight:400;
+    font-family:"Playfair Display", serif; font-weight:350;
   }
   .nine h1 span {
     margin-top: 5px;
@@ -98,11 +89,9 @@ body {
 #sidebar {
     background-color: #cbbcbc;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: -20px;
     width: 420px;
 }
-
-
 
 
 #capitalLetterCheckBox {
@@ -130,7 +119,7 @@ body {
 #payment-option {
     position: absolute;
     left: 30px; /* Adjust the left value based on your layout */
-    bottom: 220px; /* Adjust the top value based on your layout */
+    bottom: 105px; /* Adjust the top value based on your layout */
     background-color: transparent;
     padding: 30px;
     border: 1px solid #ccc;
@@ -143,8 +132,6 @@ label {
     margin-bottom: 5px;
     font-weight: bold;
 }
-
-
 
 
 input {
