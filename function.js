@@ -102,7 +102,7 @@ function setPasswordlength(password, wordBank, length, numbers, specials, starte
     return password;
   }
   else if (length < x){
-    return "";
+    return starter;
   }
 //----------------------------------------------------------------------------------
   var leftover = +length - x;
