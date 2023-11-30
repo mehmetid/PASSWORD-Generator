@@ -6,16 +6,20 @@
 
         <!-- we can use css to make the webpage look good in the future -->
         <link href="stylesheet.css" type="text/css" rel="stylesheet">
-        <title>Password Generator</title>
+        
     </head>
+
+
+    <div class="nine">
+        <h1>Password Generator<span>A Handy Tool For An Easy-to-remember Password</span></h1>
+      </div>
 
     <body>
         <div id="container">
 
             <!-- a banner at the top of the page -->
             <div id = "banner">
-                <h1 id="top">Password Generator</h1>
-                <p>A handy tool for an easy-to-remember password</p>
+                
             </div>
 
             <!-- a sidebar containing -->
@@ -43,23 +47,19 @@
                 </div>
 		    
 		        <div id = "lengthOfPassword">
-                    <label for="passwordLength">Length of Password:</label>
+                    <label for="passwordLength">Minimum Length of Password:</label>
                     <input id="passwordLength">
                 </div>
-		    
-                <button id="copyButton">Copy password</button>
 
                 <!-- a button to generate the password -->
                 <button id = "generatePasswordButton">Generate Password</button>
-                <script async
- 			 src="https://js.stripe.com/v3/buy-button.js">
-		</script>
-
-<stripe-buy-button
-  buy-button-id="buy_btn_1O4qysGRy8ae9ZREQYFMtvCU"
-  publishable-key="pk_test_51O2JC2GRy8ae9ZREuEw8OjZhqszEU7rt3N1XcCTDFi6HE1omGqijtyF1OgHtD3obL7kBDnIqUV5Bl2NAfmSUlGar001Cc0bPyx"
->
-</stripe-buy-button>
+                <button id="copyButton">Copy password</button>
+                <div id="payment-option">
+                    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+                    <stripe-buy-button buy-button-id="buy_btn_1O4qysGRy8ae9ZREQYFMtvCU"
+                        publishable-key="pk_test_51O2JC2GRy8ae9ZREuEw8OjZhqszEU7rt3N1XcCTDFi6HE1omGqijtyF1OgHtD3obL7kBDnIqUV5Bl2NAfmSUlGar001Cc0bPyx">
+                    </stripe-buy-button>
+                </div>
 	    </div>
             </div>
 
