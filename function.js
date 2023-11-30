@@ -16,7 +16,6 @@ function capsUpper(password) {
   return password;
 }
 
-
 function generatePassword(wordBank, numWords) {
   if (!Array.isArray(wordBank) || wordBank.length === 0) {
     throw new Error('Word bank must be a filled array.');
@@ -26,16 +25,24 @@ function generatePassword(wordBank, numWords) {
     throw new Error('Number of words must be greater than 0.');
   }
 
-  let password = document.getElementById("startingCharactersInput").value;
+  let start = document.getElementById("startingCharactersInput").value;
+  if (start != "" && document.getElementById("capitalLetter").checked)
+  {
+    start = start.charAt(0).toUpperCase() + start.slice(1);
+  }
+  let password = start;
 
   for (let i = 0; i < numWords; i++) {
     let randIndex = Math.floor(Math.random() * wordBank.length);
     let randWord = wordBank[randIndex];
 
-    if (i == 0 && document.getElementById("capitalLetter").checked)
+    if (document.getElementById("startingCharactersInput").value == "")
     {
-        // Capitalize the first letter of the word
-        randWord = randWord.charAt(0).toUpperCase() + randWord.slice(1);
+      if (i == 0 && document.getElementById("capitalLetter").checked)
+      {
+          // Capitalize the first letter of the word
+          randWord = randWord.charAt(0).toUpperCase() + randWord.slice(1);
+      }
     }
 
     password += randWord;
@@ -109,33 +116,40 @@ function setPasswordlength(password, wordBank, length, numbers, specials, starte
     return starter;
   }
 
-  else if(leftover <= 2){
-    for (let i = leftover; i > 0; i--)
-    {
-    let randIndex = Math.floor(Math.random() * letterBank.length);
-    let randChar = letterBank[randIndex];
+  while (leftover > 0) {
+    if (leftover <= 2){
+      console.log("adding additional letters");
+      for (let i = leftover; i > 0; i--)
+      {
+      let randIndex = Math.floor(Math.random() * letterBank.length);
+      let randChar = letterBank[randIndex];
 
-    starter += randChar;
-    if (document.getElementById("capitalLetter").checked)
-    {
-        // Capitalize the first letter of the word
-        starter = starter.charAt(0).toUpperCase() + starter.slice(1);
+      starter += randChar;
+      if (document.getElementById("capitalLetter").checked)
+      {
+          // Capitalize the first letter of the word
+          starter = starter.charAt(0).toUpperCase() + starter.slice(1);
+      }
+      leftover--;
+      }
     }
+    else {
+      console.log("finding new word to add");
+      // find a new word to add
+      let randIndex = Math.floor(Math.random() * wordBank.length);
+      let Astring = wordBank[randIndex];
 
+      starter += Astring;
+      leftover -= Astring.length;
+
+      if (document.getElementById("capitalLetter").checked)
+      {
+          // Capitalize the first letter of the word
+          starter = starter.charAt(0).toUpperCase() + starter.slice(1);
+      }
     }
-    return starter;
   }
-  else{
-    const Astring = wordBank.find(str => str.length === leftover);
-    starter += Astring;
-    if (document.getElementById("capitalLetter").checked)
-    {
-        // Capitalize the first letter of the word
-        starter = starter.charAt(0).toUpperCase() + starter.slice(1);
-    }
-    return starter;
-  }
-  return "";
+  return starter;
 }
 
 function displayPassword () {
